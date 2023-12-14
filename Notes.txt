@@ -1,0 +1,12 @@
+installs: pip install pyautogui
+pip install numpy    opencv deepndency install after opencv??
+pip install matplotlib      opencv dependency maybe install this after opencv??
+pip install opencv-python
+
+
+
+
+image recognition: dont use jpg, use png as it is lossless
+
+to use compressed files:
+use openCV

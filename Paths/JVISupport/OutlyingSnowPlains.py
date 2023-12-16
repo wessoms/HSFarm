@@ -1,6 +1,9 @@
 from .MenuFuncs import *
 from .MovementFuncs import *
+from .testing import *
 
 def clearOSP():
-    menu()
-    OSPStart()
+    testFunc()
+    #OSPStart()
+
+    

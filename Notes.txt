@@ -10,3 +10,9 @@ image recognition: dont use jpg, use png as it is lossless
 
 to use compressed files:
 use openCV
+
+
+
+to use:
+1080p emulator from LDPlayer
+game sens must be set to 3

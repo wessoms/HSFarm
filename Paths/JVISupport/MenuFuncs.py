@@ -1,18 +1,31 @@
 import time
 import pyautogui as pya
+from .MovementFuncs import *
 
 
 def menu():
     time.sleep(.5)
     pya.press('m')
+    altOff()
     time.sleep(1)
 
-'''def smoothScroll(num):
-    for i in num:
-        pya.scroll(1)
-        time.sleep(.1)
+def altOn():
+    try:
+        pya.locateCenterOnScreen('./Mainimages/Alt.png', confidence = .98)
+    except pya.ImageNotFoundException:
+        pya.press('alt')
 
-        Not needed'''
+
+def altOff():
+    try:
+        pya.locateCenterOnScreen('./Mainimages/Alt.png', confidence = .98)
+        pya.press('alt')
+    except pya.ImageNotFoundException:
+        time.sleep(.2)
+
+def resetCursor():
+    pya.press('alt')
+    pya.press('alt')
 
 def find(imageFile, conf):
     try:
@@ -126,8 +139,10 @@ def OSPStart():
     while not(checkMatch('./MainImages/NotLoadingCheck.png')):
         time.sleep(1)
 
-    print("Detected Exit")
-    time.sleep(1)
-    pya.click()
+    #Movement to first enemy
+    altOff()
+    turnLeft(90)
+    turnLeft(26)
+    SprW(2)
 
     

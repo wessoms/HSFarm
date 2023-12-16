@@ -22,7 +22,10 @@ def openGame():
         print("image not found")
         exit()
 
-    pya.moveTo(dockIcon.x, dockIcon.y, 1)
+    pya.moveTo(dockIcon.x, dockIcon.y)
     time.sleep(.5)
     pya.click()
     time.sleep(.5)
+    pya.press('alt')
+    pya.press('alt')
+    

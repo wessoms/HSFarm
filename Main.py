@@ -1,12 +1,12 @@
 import pyautogui as pya
 import Support
 from Paths import *
-from Paths.HSSSupport import *
+from Paths.JVISupport import *
 
 Support.openGame()
 
 #Clear Herta Station
-HSS.fullClear()
+JVI.fullClear()
 
 
 

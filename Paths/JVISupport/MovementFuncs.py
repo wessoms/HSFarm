@@ -28,3 +28,27 @@ def turnRight(degrees):
     pya.dragRel(pix, 0, degrees/45, button='left')
     time.sleep(.2)
     resetCursor()
+
+def scan(timer): #Timer is supposed to be seconds scanned
+    pya.press('alt')
+    for i in range(4 * timer): #Rougly 3 scans can be done per sec. Doing 4 just in case
+        try:
+            pya.locateCenterOnScreen("./MainImages/EnemyMarker.png", confidence = .90, grayscale = True)
+            print("Target Detected")
+            pya.click()
+            pya.press('alt')
+            return True
+        except:
+            time.sleep(.05)
+        try:
+            pya.locateCenterOnScreen("./MainImages/EnemyMarker2.png", confidence = .90, grayscale = True)
+            print("Target Detected")
+            pya.click()
+            pya.press('alt')
+            return True
+        except:
+            time.sleep(.05)
+        
+    pya.press('alt')
+    return False
+

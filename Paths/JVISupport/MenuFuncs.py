@@ -36,6 +36,29 @@ def find(imageFile, conf):
         exit()
     return location
 
+def checkFound(imageFile, conf):
+    try:
+        pya.locateCenterOnScreen(imageFile, confidence = conf)
+        return True
+    except pya.ImageNotFoundException:
+        return False
+    
+def waitForLoadIn():
+    while not(checkFound('./MainImages/NotLoadingCheck.png', .98)):
+        time.sleep(1)
+    
+def TPToWarp(imageName, conf):
+    mouseLoc = find(imageName, conf)
+
+    pya.moveTo(mouseLoc)
+    time.sleep(.2)
+    pya.click()
+    time.sleep(.2)
+    HitTPButton()
+    time.sleep(.2)
+
+    waitForLoadIn()
+
 def selectPlanet():
     PlanetMenu = find('./MainImages/OpenPlanetMenu.png', .98)
     pya.moveTo(PlanetMenu)
@@ -51,13 +74,6 @@ def selectPlanet():
     time.sleep(.1)
     pya.mouseUp()
     time.sleep(2)
-
-def checkMatch(givenImage):
-    try:
-        pya.locateOnScreen(givenImage, confidence = .80)
-        return True
-    except pya.ImageNotFoundException:
-        return False
 
 def HitTPButton():
     TPButton = find('./MainImages/TeleportButton.png', .98)
@@ -112,6 +128,16 @@ def selectParlor():
     time.sleep(.2)
     pya.click()
 
+def countEnemies():
+    for i in range(40):
+        if(checkFound('./MainImages/3Enemies.png', .98)):
+            return 3
+        if(checkFound('./MainImages/2Enemies.png', .98)):
+            return 2
+        time.sleep(.1)
+    return 1
+
+
 
 def OSPStart():
     menu()
@@ -127,22 +153,22 @@ def OSPStart():
 
     adjustMenu('a', 3)
 
-    FirstTP = find('./MainImages/JVIImages/OSP/FirstTP.png', .98)
-
-    pya.moveTo(FirstTP)
-    time.sleep(.2)
-    pya.click()
-    time.sleep(.2)
-    HitTPButton()
-    time.sleep(2)
-
-    while not(checkMatch('./MainImages/NotLoadingCheck.png')):
-        time.sleep(1)
+    TPToWarp('./MainImages/JVIImages/OSP/FirstTP.png', .98)
 
     #Movement to first enemy
     altOff()
     turnLeft(90)
     turnLeft(26)
-    SprW(2)
+    SprW(2.0)
+    if(not(scan(20))):
+        print("Scan unsuccessful")
+    num = countEnemies()
+    print(f"{num} enemies counted")
+    time.sleep(10)
+    waitForLoadIn
 
+def OSPSecondEnemy():
+    menu()
+    TPToWarp('./MainImages/JVIImages/OSP/OSPSecondTP.png', .98)
+    print("Successfully loaded second warp")
     

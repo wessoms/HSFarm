@@ -1,6 +1,5 @@
 import time
 import pyautogui as pya
-from .MovementFuncs import *
 
 
 def menu():
@@ -46,6 +45,7 @@ def checkFound(imageFile, conf):
 def waitForLoadIn():
     while not(checkFound('./MainImages/NotLoadingCheck.png', .98)):
         time.sleep(1)
+    print("Successfully detected exit")
     
 def TPToWarp(imageName, conf):
     mouseLoc = find(imageName, conf)
@@ -76,7 +76,7 @@ def selectPlanet():
     time.sleep(2)
 
 def HitTPButton():
-    TPButton = find('./MainImages/TeleportButton.png', .98)
+    TPButton = find('./MainImages/TeleportButton.png', .95)
 
     pya.moveTo(TPButton)
     time.sleep(.2)
@@ -137,38 +137,60 @@ def countEnemies():
         time.sleep(.1)
     return 1
 
+def resetCursor():
+    pya.press('alt')
+    pya.press('alt')
 
+def SprW(timer):
+    pya.keyDown('w')
+    time.sleep(.4)
+    pya.mouseDown(button='right')
+    time.sleep(.1)
+    pya.mouseUp(button='right')
+    if timer > .5:
+        time.sleep(timer - .5)
+    pya.keyUp('w')
 
-def OSPStart():
-    menu()
-    selectPlanet()
-    selectParlor()
-    OSPName = find('./MainImages/JVIImages/OSP/OutlyingSnowPlains.png', .98)
-
-    time.sleep(.2)
-    pya.moveTo(OSPName)
-    time.sleep(.2)
-    pya.click()
-    time.sleep(.2)
-
-    adjustMenu('a', 3)
-
-    TPToWarp('./MainImages/JVIImages/OSP/FirstTP.png', .98)
-
-    #Movement to first enemy
-    altOff()
-    turnLeft(90)
-    turnLeft(26)
-    SprW(2.0)
-    if(not(scan(20))):
-        print("Scan unsuccessful")
-    num = countEnemies()
-    print(f"{num} enemies counted")
-    time.sleep(10)
-    waitForLoadIn
-
-def OSPSecondEnemy():
-    menu()
-    TPToWarp('./MainImages/JVIImages/OSP/OSPSecondTP.png', .98)
-    print("Successfully loaded second warp")
+def angleDown():
+    resetCursor()
+    pya.dragRel(0, 400, .3)
     
+def turnLeft(degrees): #DO NOT turn more than 90 deg as cursor may go off screen
+    resetCursor()
+    pix = degrees * 6.715 #magic ratio of pixels to degrees
+    pya.dragRel(0-pix, 0, degrees/45, button='left')
+    time.sleep(.2)
+    resetCursor()
+
+def turnRight(degrees):
+    resetCursor()
+    pix = degrees * 6.715
+    pya.dragRel(pix, 0, degrees/45, button='left')
+    time.sleep(.2)
+    resetCursor()
+
+def scan(timer): #Timer is supposed to be seconds scanned
+    angleDown()
+    pya.press('alt')
+    for i in range(4 * timer): #Rougly 3 scans can be done per sec. Doing 4 just in case
+        try:
+            pya.locateCenterOnScreen("./MainImages/EnemyMarker.png", confidence = .90, grayscale = True)
+            print("Target Detected")
+            pya.click()
+            pya.press('alt')
+            return True
+        except:
+            time.sleep(.05)
+        try:
+            pya.locateCenterOnScreen("./MainImages/EnemyMarker2.png", confidence = .90, grayscale = True)
+            print("Target Detected")
+            pya.click()
+            pya.press('alt')
+            return True
+        except:
+            time.sleep(.05)
+        
+    pya.press('alt')
+    return False
+
+

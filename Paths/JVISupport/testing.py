@@ -1,11 +1,10 @@
-from .MenuFuncs import *
-from .OutlyingSnowPlains import *
-from .MovementFuncs import *
+import time
+import pyautogui as pya
+#from .MenuFuncs import *
+#from .OutlyingSnowPlains import *
+#from .MovementFuncs import *
 
 
-def testFunc():
-    altOff()
-    if(not(scan(20))):
-        print("Scan unsuccessful")
-    num = countEnemies()
-    print(f"{num} enemies counted")
+while(True):
+    pya.displayMousePosition()
+    time.sleep(5)

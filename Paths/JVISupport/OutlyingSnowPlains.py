@@ -6,6 +6,7 @@ def clearOSP():
     #testFunc()
 
     OSPStart()
+    OSPFirstEnemy()
     OSPSecondEnemy()
 
     

@@ -1,6 +1,7 @@
 import time
 import pyautogui as pya
 
+screenWidth, screenHeight = pya.size()
 
 def menu():
     time.sleep(.5)
@@ -55,7 +56,7 @@ def TPToWarp(imageName, conf):
     pya.click()
     time.sleep(.2)
     HitTPButton()
-    time.sleep(.2)
+    time.sleep(2)
 
     waitForLoadIn()
 
@@ -157,7 +158,14 @@ def angleDown():
     
 def turnLeft(degrees): #DO NOT turn more than 90 deg as cursor may go off screen
     resetCursor()
-    pix = degrees * 6.715 #magic ratio of pixels to degrees
+    #magic ratio of pixels to degrees
+    if screenHeight == 1440:
+        pix = degrees * 6.715
+    elif (screenHeight == 2160):
+        pix = degrees * 6.3
+        print("4k screen detected")
+    else:
+        print("Your resolution has not been implemented yet")
     pya.dragRel(0-pix, 0, degrees/45, button='left')
     time.sleep(.2)
     resetCursor()
@@ -174,20 +182,20 @@ def scan(timer): #Timer is supposed to be seconds scanned
     pya.press('alt')
     for i in range(4 * timer): #Rougly 3 scans can be done per sec. Doing 4 just in case
         try:
-            pya.locateCenterOnScreen("./MainImages/EnemyMarker.png", confidence = .90, grayscale = True)
+            pya.locateCenterOnScreen("./MainImages/EnemyMarker.png", confidence = .90)
             print("Target Detected")
             pya.click()
             pya.press('alt')
             return True
-        except:
+        except pya.ImageNotFoundException:
             time.sleep(.05)
         try:
-            pya.locateCenterOnScreen("./MainImages/EnemyMarker2.png", confidence = .90, grayscale = True)
+            pya.locateCenterOnScreen("./MainImages/EnemyMarker2.png", confidence = .90)
             print("Target Detected")
             pya.click()
             pya.press('alt')
             return True
-        except:
+        except pya.ImageNotFoundException:
             time.sleep(.05)
         
     pya.press('alt')

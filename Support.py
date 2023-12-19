@@ -16,11 +16,15 @@ import subprocess
 
 def openGame():
     try:
-        dockIcon = pya.locateCenterOnScreen('./Mainimages/DockIcon.png')
+        dockIcon = pya.locateCenterOnScreen('./Mainimages/DockIcon.png', confidence = .85)
         print("image found")
     except pya.ImageNotFoundException:
-        print("image not found")
-        exit()
+        try:
+            dockIcon = pya.locateCenterOnScreen('./MainImages/DockIcon2.png', confidence = .85)
+            print("Image found")
+        except pya.ImageNotFoundException:
+            print("image not found")
+            exit()
 
     pya.moveTo(dockIcon.x, dockIcon.y)
     time.sleep(.5)

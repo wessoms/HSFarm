@@ -5,6 +5,4 @@ import pyautogui as pya
 #from .MovementFuncs import *
 
 
-while(True):
-    pya.displayMousePosition()
-    time.sleep(5)
+

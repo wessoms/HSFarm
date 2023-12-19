@@ -6,7 +6,7 @@ def OSPStart():
     menu()
     selectPlanet()
     selectParlor()
-    OSPName = find('./MainImages/JVIImages/OSP/OutlyingSnowPlains.png', .95)
+    OSPName = find('./MainImages/JVIImages/OSP/OutlyingSnowPlains.png', .85)
 
     time.sleep(.2)
     pya.moveTo(OSPName)

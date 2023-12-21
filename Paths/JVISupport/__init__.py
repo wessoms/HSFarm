@@ -1,5 +1,5 @@
-__all__ = ["OutlyingSnowPlains", "MenuFuncs", "MovementFuncs"]
+__all__ = ["AreaClear", "MenuFuncs", "MovementFuncs"]
 
-from .OutlyingSnowPlains import *
+from .AreaClear import *
 from .MenuFuncs import *
 from .MovementFuncs import *

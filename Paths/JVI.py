@@ -1,4 +1,5 @@
 from .JVISupport import *
 
 def fullClear():
-    OutlyingSnowPlains.clearOSP()
+    #AreaClear.clearOSP()
+    AreaClear.clearBP()

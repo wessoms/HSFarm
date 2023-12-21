@@ -67,7 +67,7 @@ def selectPlanet():
     pya.click()
     time.sleep(1)
 
-    Planet = find('./MainImages/JVIImages/JVIPlanet.png', .80)
+    Planet = find('./MainImages/JVI/JVIPlanet.png', .80)
     Planety = Planet.y - 70
     pya.moveTo(Planet.x, Planety)
     time.sleep(.5)
@@ -77,7 +77,7 @@ def selectPlanet():
     time.sleep(2)
 
 def HitTPButton():
-    TPButton = find('./MainImages/TeleportButton.png', .95)
+    TPButton = find('./MainImages/TeleportButton.png', .90)
 
     pya.moveTo(TPButton)
     time.sleep(.2)
@@ -89,7 +89,7 @@ def adjustMenu(direction, times):
     pya.moveTo(Zoomout)
     time.sleep(.2)
     pya.mouseDown()
-    time.sleep(5)
+    time.sleep(3)
     pya.mouseUp()
     time.sleep(.2)
 
@@ -160,19 +160,25 @@ def turnLeft(degrees): #DO NOT turn more than 90 deg as cursor may go off screen
     resetCursor()
     #magic ratio of pixels to degrees
     if screenHeight == 1440:
-        pix = degrees * 6.715
+        pix = degrees * 6.37
     elif (screenHeight == 2160):
         pix = degrees * 6.3
         print("4k screen detected")
     else:
         print("Your resolution has not been implemented yet")
-    pya.dragRel(0-pix, 0, degrees/45, button='left')
+    pya.dragRel(0-pix, 0, degrees/45.0, button='left')
     time.sleep(.2)
     resetCursor()
 
 def turnRight(degrees):
     resetCursor()
-    pix = degrees * 6.715
+    if screenHeight == 1440:
+        pix = degrees * 6.37
+    elif (screenHeight == 2160):
+        pix = degrees * 6.3
+        print("4k screen detected")
+    else:
+        print("Your resolution has not been implemented yet")
     pya.dragRel(pix, 0, degrees/45, button='left')
     time.sleep(.2)
     resetCursor()
@@ -182,25 +188,32 @@ def scan(timer): #Timer is supposed to be seconds scanned
     windowTop = windowY - 950
     angleDown()
     pya.press('alt')
-    for i in range(4 * timer): #Rougly 3 scans can be done per sec. Doing 4 just in case
+    for i in range(10 * timer):
         try:
-            pya.locateCenterOnScreen("./MainImages/EnemyMarker.png", region = (windowLeft, windowTop, 1750, 950), confidence = .85, grayscale = True)
+            pya.locateCenterOnScreen("./MainImages/EnemyMarkerTest1.png", region = (windowLeft, windowTop, 1750, 950), confidence = .97)
             print("Target Detected")
             pya.click()
             pya.press('alt')
             return True
         except pya.ImageNotFoundException:
-            time.sleep(.05)
+            pass
         try:
-            pya.locateCenterOnScreen("./MainImages/EnemyMarker2.png", region = (windowLeft, windowTop, 1750, 950), confidence = .85, grayscale = True)
+            pya.locateCenterOnScreen("./MainImages/EnemyMarkerTest2.png", region = (windowLeft, windowTop, 1750, 950), confidence = .97)
             print("Target Detected")
             pya.click()
             pya.press('alt')
             return True
         except pya.ImageNotFoundException:
-            time.sleep(.05)
+            pass
         
     pya.press('alt')
     return False
 
 
+def scanFor(scanTimer, waitTime):
+    if(not(scan(scanTimer))):
+        print("Scan unsuccessful")
+    num = countEnemies()
+    print(f"{num} enemies counted")
+    time.sleep(waitTime)
+    waitForLoadIn()

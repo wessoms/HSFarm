@@ -178,11 +178,13 @@ def turnRight(degrees):
     resetCursor()
 
 def scan(timer): #Timer is supposed to be seconds scanned
+    windowLeft, windowY = find('./MainImages/NotLoadingCheck.png', .98)
+    windowTop = windowY - 950
     angleDown()
     pya.press('alt')
     for i in range(4 * timer): #Rougly 3 scans can be done per sec. Doing 4 just in case
         try:
-            pya.locateCenterOnScreen("./MainImages/EnemyMarker.png", confidence = .90)
+            pya.locateCenterOnScreen("./MainImages/EnemyMarker.png", region = (windowLeft, windowTop, 1750, 950), confidence = .85, grayscale = True)
             print("Target Detected")
             pya.click()
             pya.press('alt')
@@ -190,7 +192,7 @@ def scan(timer): #Timer is supposed to be seconds scanned
         except pya.ImageNotFoundException:
             time.sleep(.05)
         try:
-            pya.locateCenterOnScreen("./MainImages/EnemyMarker2.png", confidence = .90)
+            pya.locateCenterOnScreen("./MainImages/EnemyMarker2.png", region = (windowLeft, windowTop, 1750, 950), confidence = .85, grayscale = True)
             print("Target Detected")
             pya.click()
             pya.press('alt')

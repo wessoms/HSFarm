@@ -3,10 +3,10 @@ from .MovementFuncs import *
 from .testing import *
 
 def clearOSP():
-    #testFunc()
+    testFunc()
 
-    OSPStart()
-    OSPFirstEnemy()
-    OSPSecondEnemy()
+    #OSPStart()
+    #OSPFirstEnemy()
+    #OSPSecondEnemy()
 
     

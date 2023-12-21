@@ -32,7 +32,7 @@ def OSPFirstEnemy():
 
 def OSPSecondEnemy():
     menu()
-    TPToWarp('./MainImages/JVIImages/OSP/OSPSecondTP.png', .95)
+    TPToWarp('./MainImages/JVIImages/OSP/SecondTP.png', .95)
     print("Successfully loaded second warp")
 
     turnLeft(90)

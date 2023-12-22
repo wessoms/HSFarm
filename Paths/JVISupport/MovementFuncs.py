@@ -15,7 +15,7 @@ def OSPStart():
     time.sleep(.2)
 
 def OSPFirstEnemy():
-    adjustMenu('a', 3)
+    adjustMenu('a', 3, 3)
 
     TPToWarp('./MainImages/JVI/OSP/FirstTP.png', .98)
 
@@ -72,8 +72,8 @@ def BPStart():
     time.sleep(.2)
 
 def BPFirstEnemy():
-    adjustMenu('s', 4)
-    adjustMenu('d', 3)
+    adjustMenu('s', 4, 3)
+    adjustMenu('d', 3, 0)
 
     firstWarp = find('./MainImages/JVI/BP/FirstTP.png', .90)
     pya.moveTo(firstWarp)
@@ -128,7 +128,7 @@ def BPThirdEnemy():
 
 def BPFourthEnemy():
     menu()
-    adjustMenu('w', 1)
+    adjustMenu('w', 1, 3)
 
     TPToWarp('./MainImages/JVI/BP/SecondTP.png', .90)
     turnLeft(90)
@@ -176,8 +176,8 @@ def CFEStart():
     time.sleep(.2)
 
 def CFEFirstEnemy():
-    adjustMenu('s', 4)
-    adjustMenu('d', 2)
+    adjustMenu('s', 4, 3)
+    adjustMenu('d', 2, 0)
 
     TPToWarp('./MainImages/JVI/CFE/FirstTP.png', .90)
     turnRight(90)
@@ -187,7 +187,7 @@ def CFEFirstEnemy():
 
 def CFESecondEnemy():
     menu()
-    adjustMenu('w', 2)
+    adjustMenu('w', 2, 3)
     
     secondWarp = find('./MainImages/JVI/CFE/SecondTP1.png', .90)
     pya.moveTo(secondWarp)
@@ -262,8 +262,8 @@ def CFEFifthEnemy():
 
 def CFESixthEnemy():
     menu()
-    adjustMenu('w', 4)
-    adjustMenu('d', 2)
+    adjustMenu('w', 4, 3)
+    adjustMenu('d', 2, 0)
     TPToWarp('./MainImages/JVI/CFE/FifthTP.png', .90)
    
     turnLeft(90)
@@ -299,3 +299,85 @@ def CFEEighthEnemy():
     turnRight(87)
     SprW(1.0)
     scanFor(10, 5)
+
+#----------------------------------------------------------------------
+    
+def EHStart():
+    menu()
+    selectPlanet()
+    selectParlor()
+
+    EHName = find('./MainImages/JVI/EH/EverwinterHill.png', .85)
+    time.sleep(.2)
+    pya.moveTo(EHName)
+    time.sleep(.2)
+    pya.click()
+    time.sleep(.2)
+
+def EHFirstEnemy():
+    adjustMenu('w', 3, 3)
+    adjustMenu('d', 3, 0)
+    adjustMenu('s', 1, 0)
+    adjustMenu('a', 1, 0)
+
+    TPToWarp('./MainImages/JVI/EH/TP1.png', .90)
+
+    turnLeft(90)
+    turnLeft(45)
+    SprW(1.7)
+    turnRight(57)
+    SprW(2.4)
+    scanFor(5, 10)
+
+def EHSecondEnemy():
+    menu()
+    TPToWarp('./MainImages/JVI/EH/TP1.png', .90)
+
+    turnLeft(90)
+    turnLeft(45)
+    SprW(1.7)
+    turnRight(57)
+    SprW(3.8)
+    turnRight(90)
+    SprW(2)
+    scanFor(5, 5)
+
+def EHThirdEnemy():
+    menu()
+    adjustMenu('d', 1, 0)
+    
+    secondWarp = find('./MainImages/JVI/EH/SecondTP1.png', .90)
+    pya.moveTo(secondWarp)
+    time.sleep(.2)
+    pya.click()
+    time.sleep(.2)
+    TPToWarp('./MainImages/JVI/EH/SecondTP2.png', .90)
+
+    SprW(4.5)
+    turnLeft(80)
+    SprW(3.2)
+    turnLeft(35)
+    SprW(1.6)
+    scanFor(3, 10)
+
+def EHFourthEnemy():
+    menu()
+
+    secondWarp = find('./MainImages/JVI/EH/SecondTP1.png', .90)
+    pya.moveTo(secondWarp)
+    time.sleep(.2)
+    pya.click()
+    time.sleep(.2)
+    TPToWarp('./MainImages/JVI/EH/SecondTP2.png', .90)
+
+    SprW(4.5)
+    turnLeft(80)
+    SprW(3.2)
+    turnLeft(35)
+    SprW(1.6)
+    turnRight(20)
+    SprW(1)
+    turnRight(20)
+    SprW(1)
+    scanFor(10, 5)
+

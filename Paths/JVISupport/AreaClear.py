@@ -36,3 +36,8 @@ def clearCFE():
     CFESeventhEnemy()
     CFEEighthEnemy()
     
+def clearEH():
+    testFunc()
+
+    #EHStart()
+    #EHFirstEnemy()

@@ -85,12 +85,12 @@ def HitTPButton():
     pya.click()
     time.sleep(1)
 
-def adjustMenu(direction, times):
+def adjustMenu(direction, times, timer):
     Zoomout = find('./MainImages/Zoomout.png', .98)
     pya.moveTo(Zoomout)
     time.sleep(.2)
     pya.mouseDown()
-    time.sleep(3)
+    time.sleep(timer)
     pya.mouseUp()
     time.sleep(.2)
 

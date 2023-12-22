@@ -5,13 +5,14 @@ from .AreaClear import *
 from .MovementFuncs import *
 
 def testFunc():
-    turnLeft(90)
-    turnLeft(90)
-    SprW(3.8)
-    turnLeft(45)
-    SprW(4.7)
-    turnRight(48)
-    SprW(4.2)
-    turnRight(87)
-    SprW(1.0)
+
+    SprW(4.5)
+    turnLeft(80)
+    SprW(3.2)
+    turnLeft(35)
+    SprW(1.6)
+    turnRight(20)
+    SprW(1)
+    turnRight(20)
+    SprW(1)
     scanFor(10, 5)

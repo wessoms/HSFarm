@@ -13,7 +13,7 @@ def clearOSP():
 
 
 def clearBP():
-    testFunc()
+    #testFunc()
 
     BPStart()
     BPFirstEnemy()
@@ -22,4 +22,17 @@ def clearBP():
     BPFourthEnemy()
     BPFifthEnemy()
     BPSixthEnemy()
+
+def clearCFE():
+    #testFunc()
+
+    CFEStart()
+    CFEFirstEnemy()
+    CFESecondEnemy()
+    CFEThirdEnemy()
+    CFEFourthEnemy()
+    CFEFifthEnemy()
+    CFESixthEnemy()
+    CFESeventhEnemy()
+    CFEEighthEnemy()
     

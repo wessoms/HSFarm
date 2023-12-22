@@ -44,9 +44,10 @@ def checkFound(imageFile, conf):
         return False
     
 def waitForLoadIn():
-    while not(checkFound('./MainImages/NotLoadingCheck.png', .98)):
+    while not(checkFound('./MainImages/NotLoadingCheck.png', .99) and checkFound('./MainImages/HealthSample.png', .99)):
         time.sleep(1)
     print("Successfully detected exit")
+    time.sleep(1)
     
 def TPToWarp(imageName, conf):
     mouseLoc = find(imageName, conf)
@@ -154,7 +155,7 @@ def SprW(timer):
 
 def angleDown():
     resetCursor()
-    pya.dragRel(0, 400, .3)
+    pya.dragRel(0, 300, .3)
     
 def turnLeft(degrees): #DO NOT turn more than 90 deg as cursor may go off screen
     resetCursor()

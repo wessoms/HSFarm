@@ -11,10 +11,15 @@ def clearOSP():
     OSPThirdEnemy()
     OSPFourthEnemy()
 
+
 def clearBP():
     testFunc()
 
-    #BPStart()
-    #BPFirstEnemy()
-
+    BPStart()
+    BPFirstEnemy()
+    BPSecondEnemy()
+    BPThirdEnemy()
+    BPFourthEnemy()
+    BPFifthEnemy()
+    BPSixthEnemy()
     

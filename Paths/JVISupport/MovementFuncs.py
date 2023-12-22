@@ -57,6 +57,8 @@ def OSPFourthEnemy():
     SprW(3.2)
     scanFor(5, 10)
 
+#----------------------------------------------------------------------
+
 def BPStart():
     menu()
     selectPlanet()
@@ -90,13 +92,13 @@ def BPFirstEnemy():
 def BPSecondEnemy():
     menu()
 
-    firstWarp = find('./MainImages/JVI/BP/FirstTP.png', .95)
+    firstWarp = find('./MainImages/JVI/BP/FirstTP.png', .90)
     pya.moveTo(firstWarp)
     time.sleep(.2)
     pya.click()
     time.sleep(.2)
 
-    TPToWarp('./MainImages/JVI/BP/FirstTP2.png', .95)
+    TPToWarp('./MainImages/JVI/BP/FirstTP2.png', .90)
 
     turnLeft(90)
     turnLeft(90)
@@ -104,3 +106,55 @@ def BPSecondEnemy():
     turnLeft(53)
     SprW(0.9)
     scanFor(5, 10)
+
+def BPThirdEnemy():
+    menu()
+
+    firstWarp = find('./MainImages/JVI/BP/FirstTP.png', .90)
+    pya.moveTo(firstWarp)
+    time.sleep(.2)
+    pya.click()
+    time.sleep(.2)
+
+    TPToWarp('./MainImages/JVI/BP/FirstTP2.png', .90)
+
+    SprW(.9)
+    time.sleep(1)
+    pya.keyDown('d')
+    time.sleep(2)
+    pya.keyUp('d')
+    SprW(3.5)
+    scanFor(5, 5)
+
+def BPFourthEnemy():
+    menu()
+    adjustMenu('w', 1)
+
+    TPToWarp('./MainImages/JVI/BP/SecondTP.png', .90)
+    turnLeft(90)
+    turnLeft(90)
+    SprW(5.4)
+    turnLeft(90)
+    SprW(1.5)
+    scanFor(5, 10)
+
+def BPFifthEnemy():
+    menu()
+
+    TPToWarp('./MainImages/JVI/BP/SecondTP.png', .90)
+    turnLeft(90)
+    turnLeft(90)
+    SprW(5.8)
+    turnLeft(90)
+    SprW(3.6)
+    scanFor(10,5)
+
+def BPSixthEnemy():
+    turnLeft(90)
+    turnLeft(90)
+    SprW(3.7)
+    turnRight(90)
+    SprW(4)
+    scanFor(5, 5)
+
+#----------------------------------------------------------------------

@@ -462,6 +462,7 @@ def GMFifthEnemy():
     scanFor(5, 5)
 
 def GMSixthEnemy():
+    menu()
     thirdWarp = find('./MainImages/JVI/GM/ThirdTP1.png', .90)
     pya.moveTo(thirdWarp)
     time.sleep(.2)
@@ -477,6 +478,7 @@ def GMSixthEnemy():
     scanFor(5, 5)
 
 def GMSeventhEnemy():
+    menu()
     thirdWarp = find('./MainImages/JVI/GM/ThirdTP1.png', .90)
     pya.moveTo(thirdWarp)
     time.sleep(.2)
@@ -544,6 +546,8 @@ def RTStart():
     time.sleep(1)
     pya.scroll(-5000)
     time.sleep(1)
+    pya.scroll(-5000)
+    time.sleep(1)
 
     GMName = find('./MainImages/JVI/RT/RivetTown.png', .85)
     time.sleep(.2)
@@ -597,7 +601,7 @@ def RTThirdEnemy():
 
 def RTFourthEnemy():
     menu()
-    TPToWarp('./MainImages/JVI/RT/SecondTP.png', .90)
+    TPToWarp('./MainImages/JVI/RT/ThirdTP.png', .90)
 
     turnRight(90)
     turnRight(55)
@@ -612,7 +616,7 @@ def RTFourthEnemy():
     sprW(1)
     if(scanFor(10, 5) == 1):
         menu()
-        TPToWarp('./MainImages/JVI/RT/SecondTP.png', .90)
+        TPToWarp('./MainImages/JVI/RT/Third.png', .90)
 
         turnRight(90)
         turnRight(55)
@@ -626,3 +630,110 @@ def RTFourthEnemy():
         turnLeft(90)
         sprW(1)
         scanFor(10, 5)
+
+#----------------------------------------------------------------------
+        
+def RSStart():
+    menu()
+    selectPlanet()
+    selectParlor()
+    pya.scroll(-5000)
+    time.sleep(1)
+    pya.scroll(-5000)
+    time.sleep(1)
+    pya.scroll(-5000)
+    time.sleep(1)
+
+    GMName = find('./MainImages/JVI/RS/RobotSettlement.png', .85)
+    time.sleep(.2)
+    pya.moveTo(GMName)
+    time.sleep(.2)
+    pya.click()
+    time.sleep(.2)
+
+def RSFirstEnemy():
+    adjustMenu('w', 3, 3)
+    adjustMenu('d', 1, 0)
+    adjustMenu('s', 1, 0)
+
+    TPToWarp('./MainImages/JVI/RS/FirstTP.png', .90)
+
+    turnRight(90)
+    turnRight(50)
+    sprW(.8)
+    scanFor(5, 5)
+
+def RSSecondEnemy():
+    menu()
+    TPToWarp('./MainImages/JVI/RS/SecondTP.png', .90)
+
+    walk('s', .7)
+    turnRight(90)
+    turnRight(20)
+    sprW(3.8)
+    turnRight(20)
+    scanFor(10, 5)
+
+def RSThirdEnemy():
+    menu()
+    TPToWarp('./MainImages/JVI/RS/SecondTP.png', .90)
+
+    walk('s', .7)
+    turnRight(90)
+    turnRight(20)
+    sprW(1.8)
+    turnRight(90)
+    sprW(5.7)
+    turnLeft(30)
+    sprW(1.1)
+    turnRight(42)
+    sprW(2)
+    turnLeft(40)
+    sprW(2)
+    turnLeft(80)
+    sprW(.6)
+    scanFor(5, 5)
+
+def RSFourthEnemy():
+    menu()
+    TPToWarp('./MainImages/JVI/RS/SecondTP.png', .90)
+
+    walk('s', .7)
+    turnRight(90)
+    turnRight(20)
+    sprW(1.8)
+    turnRight(90)
+    sprW(5.7)
+    turnLeft(30)
+    sprW(1.1)
+    turnRight(42)
+    sprW(2)
+    turnLeft(40)
+    sprW(2.2)
+    turnLeft(80)
+    sprW(1.5)
+    turnLeft(85)
+    sprW(.7)
+    scanFor(5, 5)
+
+def RSFifthEnemy():
+    menu()
+    TPToWarp('./MainImages/JVI/RS/SecondTP.png', .90)
+
+    walk('s', .7)
+    turnRight(90)
+    turnRight(20)
+    sprW(1.8)
+    turnRight(90)
+    sprW(5.7)
+    turnLeft(30)
+    sprW(1.1)
+    turnRight(42)
+    sprW(2)
+    turnLeft(50)
+    sprW(2.2)
+    turnRight(78)
+    sprW(2.5)
+    turnLeft(85)
+    scanFor(5, 5)
+

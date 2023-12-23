@@ -6,4 +6,5 @@ def fullClear():
     #AreaClear.clearCFE()
     #AreaClear.clearEH()
     #AreaClear.clearGM()
-    AreaClear.clearRT()
+    #AreaClear.clearRT()
+    AreaClear.clearRS()

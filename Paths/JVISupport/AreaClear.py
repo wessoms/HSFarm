@@ -46,7 +46,7 @@ def clearEH():
     EHFourthEnemy()
 
 def clearGM():
-    testFunc()
+    #testFunc()
 
     GMStart()
     GMFirstEnemy()
@@ -57,3 +57,12 @@ def clearGM():
     GMSixthEnemy()
     GMSeventhEnemy()
     GMEighthEnemy()
+
+def clearRT():
+    #testFunc()
+
+    RTStart()
+    RTFirstEnemy()
+    RTSecondEnemy()
+    RTThirdEnemy()
+    RTFourthEnemy()

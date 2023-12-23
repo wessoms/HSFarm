@@ -143,7 +143,12 @@ def resetCursor():
     pya.press('alt')
     pya.press('alt')
 
-def SprW(timer):
+def walk(direction, timer):
+    pya.keyDown(direction)
+    time.sleep(timer)
+    pya.keyUp(direction)
+
+def sprW(timer):
     pya.keyDown('w')
     time.sleep(.4)
     pya.mouseDown(button='right')
@@ -218,3 +223,4 @@ def scanFor(scanTimer, waitTime):
     print(f"{num} enemies counted")
     time.sleep(waitTime)
     waitForLoadIn()
+    return num

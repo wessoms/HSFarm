@@ -68,7 +68,7 @@ def clearRT():
     RTFourthEnemy()
 
 def clearRS():
-    testFunc()
+    #testFunc()
 
     RSStart()
     RSFirstEnemy()

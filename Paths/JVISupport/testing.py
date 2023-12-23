@@ -6,13 +6,13 @@ from .MovementFuncs import *
 
 def testFunc():
 
-    SprW(4.5)
-    turnLeft(80)
-    SprW(3.2)
-    turnLeft(35)
-    SprW(1.6)
-    turnRight(20)
+    turnLeft(65)
+    SprW(2.7)
+    turnLeft(65)
+    SprW(2)
+    turnRight(90)
+    turnRight(25)
+    SprW(3)
+    turnRight(75)
     SprW(1)
-    turnRight(20)
-    SprW(1)
-    scanFor(10, 5)
+    scanFor(5, 10)

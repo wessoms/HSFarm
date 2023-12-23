@@ -15,4 +15,4 @@ use openCV
 
 to use:
 1080p emulator from LDPlayer
-game sens must be set to 3
+game sens must be set to 3, fps = 60

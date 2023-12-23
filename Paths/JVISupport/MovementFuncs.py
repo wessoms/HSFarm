@@ -381,3 +381,162 @@ def EHFourthEnemy():
     SprW(1)
     scanFor(10, 5)
 
+#----------------------------------------------------------------------
+    
+def GMStart():
+    menu()
+    selectPlanet()
+    selectParlor()
+    pya.scroll(-5000)
+    time.sleep(1)
+    pya.scroll(-5000)
+    time.sleep(1)
+
+    GMName = find('./MainImages/JVI/GM/GreatMine.png', .85)
+    time.sleep(.2)
+    pya.moveTo(GMName)
+    time.sleep(.2)
+    pya.click()
+    time.sleep(.2)
+
+def GMFirstEnemy():
+    adjustMenu('w', 3, 3)
+    adjustMenu('d', 3, 0)
+    
+    TPToWarp('./MainImages/JVI/GM/FirstTP.png', .90)
+
+    turnLeft(90)
+    turnLeft(18)
+    SprW(3.5)
+    scanFor(5, 10)
+
+def GMSecondEnemy():
+    menu()
+    TPToWarp('./MainImages/JVI/GM/FirstTP.png', .90)
+
+    turnLeft(90)
+    turnLeft(18)
+    SprW(4)
+    turnRight(33)
+    SprW(2.5)
+    turnRight(25)
+    scanFor(10, 5)
+
+def GMThirdEnemy():
+    menu()
+    TPToWarp('./MainImages/JVI/GM/FirstTP.png', .90)
+
+    turnLeft(90)
+    turnLeft(18)
+    SprW(4)
+    turnRight(33)
+    SprW(3.8)
+    turnRight(90)
+    turnRight(35)
+    SprW(2)
+    turnRight(55)
+    SprW(2)
+    turnLeft(38)
+    SprW(1)
+    turnLeft(60)
+    SprW(1.5)
+    scanFor(5, 5)
+
+def GMFourthEnemy():
+    menu()
+    TPToWarp('./MainImages/JVI/GM/FirstTP.png', .90)
+
+    SprW(1.6)
+    turnRight(67)
+    SprW(2.5)
+    scanFor(10, 5)
+
+def GMFifthEnemy():
+    menu()
+    TPToWarp('./MainImages/JVI/GM/SecondTP.png', .90)
+
+    turnLeft(90)
+    turnLeft(40)
+    SprW(3.4)
+    turnRight(70)
+    SprW(1.0)
+    turnLeft(63)
+    SprW(1.6)
+    scanFor(5, 5)
+
+def GMSixthEnemy():
+    thirdWarp = find('./MainImages/JVI/GM/ThirdTP1.png', .90)
+    pya.moveTo(thirdWarp)
+    time.sleep(.2)
+    pya.click()
+    time.sleep(.2)
+    TPToWarp('./MainImages/JVI/GM/ThirdTP2.png', .90)
+
+    turnRight(90)
+    turnRight(12)
+    SprW(2.5)
+    turnLeft(45)
+    SprW(2)
+    scanFor(5, 5)
+
+def GMSeventhEnemy():
+    thirdWarp = find('./MainImages/JVI/GM/ThirdTP1.png', .90)
+    pya.moveTo(thirdWarp)
+    time.sleep(.2)
+    pya.click()
+    time.sleep(.2)
+    TPToWarp('./MainImages/JVI/GM/ThirdTP2.png', .90)
+
+    turnRight(90)
+    turnRight(12)
+    SprW(2.5)
+    turnLeft(45)
+    SprW(2)
+    turnLeft(55)
+    SprW(1.8)
+    turnRight(40)
+    scanFor(10, 5)
+
+def GMEighthEnemy():
+    menu()
+    TPToWarp('./MainImages/JVI/GM/FourthTP.png', .90)
+
+    turnLeft(65)
+    SprW(2.7)
+    turnLeft(65)
+    SprW(2)
+    altOn()
+    time.sleep(.1)
+    pya.click()
+    altOff()
+    num = countEnemies()
+    print(f"{num} enemies counted")
+    time.sleep(10)
+    waitForLoadIn()
+    if num != 3:
+        menu()
+        TPToWarp('./MainImages/JVI/GM/FourthTP.png', .90)
+        turnLeft(65)
+        SprW(2.7)
+        turnLeft(60)
+        SprW(2)
+        scanFor(10, 5)
+
+def GMNinthEnemy():
+    menu()
+    TPToWarp('./MainImages/JVI/GM/FourthTP.png', .90)
+
+    turnLeft(65)
+    SprW(2.7)
+    turnLeft(65)
+    SprW(2)
+    turnRight(90)
+    turnRight(25)
+    SprW(3)
+    turnRight(75)
+    SprW(1)
+    scanFor(5, 10)
+
+#----------------------------------------------------------------------
+    
+

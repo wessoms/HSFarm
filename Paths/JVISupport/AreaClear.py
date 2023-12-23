@@ -37,7 +37,23 @@ def clearCFE():
     CFEEighthEnemy()
     
 def clearEH():
+    #testFunc()
+
+    EHStart()
+    EHFirstEnemy()
+    EHSecondEnemy()
+    EHThirdEnemy()
+    EHFourthEnemy()
+
+def clearGM():
     testFunc()
 
-    #EHStart()
-    #EHFirstEnemy()
+    GMStart()
+    GMFirstEnemy()
+    GMSecondEnemy()
+    GMThirdEnemy()
+    GMFourthEnemy()
+    GMFifthEnemy()
+    GMSixthEnemy()
+    GMSeventhEnemy()
+    GMEighthEnemy()

@@ -6,8 +6,8 @@ from Paths.JVISupport import *
 Support.openGame()
 
 #Clear Herta Station
-JVI.fullClear()
-
+#JVI.fullClear()
+HSS.fullClear()
 
 
 

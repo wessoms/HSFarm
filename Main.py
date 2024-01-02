@@ -3,14 +3,15 @@ import Support
 from Paths import *
 from Paths.JVISupport import *
 
-Support.openGame()
+def main():
+    Support.openGame()
 
-#Clear Herta Station
-#JVI.fullClear()
-HSS.fullClear()
+    HSS.fullClear()
+    JVI.fullClear()
 
 
-
+if __name__ == '__main__':
+    main()
 
 
 

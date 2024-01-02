@@ -1,8 +1,6 @@
 import time
 import pyautogui as pya
 
-screenWidth, screenHeight = pya.size()
-
 def menu():
     time.sleep(.5)
     pya.press('m')

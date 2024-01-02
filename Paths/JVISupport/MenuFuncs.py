@@ -12,14 +12,14 @@ def menu():
 
 def altOn():
     try:
-        pya.locateCenterOnScreen('./Mainimages/Alt.png', confidence = .98)
+        pya.locateCenterOnScreen('./Mainimages/Alt.png', confidence = .94)
     except pya.ImageNotFoundException:
         pya.press('alt')
 
 
 def altOff():
     try:
-        pya.locateCenterOnScreen('./Mainimages/Alt.png', confidence = .98)
+        pya.locateCenterOnScreen('./Mainimages/Alt.png', confidence = .94)
         pya.press('alt')
     except pya.ImageNotFoundException:
         time.sleep(.2)
@@ -29,13 +29,15 @@ def resetCursor():
     pya.press('alt')
 
 def find(imageFile, conf):
-    try:
-        location = pya.locateCenterOnScreen(imageFile, confidence = conf)
-        print(f"'{imageFile}' found successfully")
-    except pya.ImageNotFoundException:
-        print(f"'{imageFile}' not found")
-        exit()
-    return location
+    for i in range(10):
+        try:
+            location = pya.locateCenterOnScreen(imageFile, confidence = (conf - (i * .01)))
+            print(f"'{imageFile}' found successfully")
+            return location
+        except pya.ImageNotFoundException:
+            print(f"'{imageFile}' not found, trying again...")
+    print("Could not find the image after 10 tries... Exiting.")
+    exit()
 
 def checkFound(imageFile, conf):
     try:
@@ -52,7 +54,7 @@ def checkFoundInRegion(imageFile, conf, regionX, regionY):
         return False
     
 def waitForLoadIn():
-    while not(checkFound('./MainImages/NotLoadingCheck.png', .95) and checkFound('./MainImages/HealthSample.png', .95)):
+    while not(checkFound('./MainImages/NotLoadingCheck.png', .93) and checkFound('./MainImages/HealthSample.png', .93)):
         time.sleep(1)
     print("Successfully detected exit")
     time.sleep(1)
@@ -139,7 +141,7 @@ def selectParlor():
     pya.click()
 
 def countEnemies():
-    for i in range(40):
+    for i in range(5 * calcedFPS):
         if(checkFound('./MainImages/3Enemies.png', .98)):
             return 3
         if(checkFound('./MainImages/2Enemies.png', .98)):
@@ -236,18 +238,18 @@ def scan(timer):
         if checkFoundInRegion("./MainImages/EnemyMarker1.png", .95, windowLeft, windowTop):
             print("Target Detected (Light)")
             pya.click()
-            altOff()
+            pya.press('alt')
             return True
         elif checkFoundInRegion("./MainImages/EnemyMarker2.png", .95, windowLeft, windowTop):
             print("Target Detected (Mid)")
             pya.click()
-            altOff()
+            pya.press('alt')
             return True
         elif checkFoundInRegion("./MainImages/Ambushed.png", .97, windowLeft, windowTop):
             print("Ambushed!")
-            altOff()
+            pya.press('alt')
             return True
-    altOff()
+    pya.press('alt')
     return False
 
 

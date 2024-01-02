@@ -4,15 +4,8 @@ pip install matplotlib      opencv dependency maybe install this after opencv??
 pip install opencv-python
 
 
-
-
-image recognition: dont use jpg, use png as it is lossless
-
-to use compressed files:
-use openCV
-
-
-
 to use:
 1080p emulator from LDPlayer
 game sens must be set to 3, fps = 60
+
+ensure the route is clear and all quests that interfere with spawnpoints are completed

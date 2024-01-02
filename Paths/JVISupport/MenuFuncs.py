@@ -3,7 +3,7 @@ import pyautogui as pya
 
 #screenWidth, screenHeight = pya.size()
 #Declares variables used across multiple functions
-scanRegionX, scanRegionY, calcedFPS = None
+
 def menu():
     time.sleep(.5)
     pya.press('m')
@@ -46,7 +46,7 @@ def checkFound(imageFile, conf):
     
 def checkFoundInRegion(imageFile, conf, regionX, regionY):
     try:
-        pya.locateCenterOnScreen(imageFile, region = (regionX, regionY, 1750, 950), confidence = conf)
+        pya.locateCenterOnScreen(imageFile, region = (regionX, regionY, 1750, 950), confidence = conf, grayscale = True)
         return True
     except pya.ImageNotFoundException:
         return False
@@ -171,20 +171,24 @@ def angleDown():
     pya.dragRel(0, 300, .3)
 
 def calibrate(): #Calculates screen references and FPS while scanning
+    global scanRegionX, scanRegionY
+    global calcedFPS
     framesCaptured = 0
+    waitForLoadIn()
     scanRegionX, scanRegionY = find('./MainImages/NotLoadingCheck.png', .90)
     windowLeft = scanRegionX
     windowTop = scanRegionY- 950
     timeStart = time.time()
     while (time.time() < timeStart + 3):
-        if checkFoundInRegion("./MainImages/Test1.png", .95, windowLeft, windowTop):
+        if checkFoundInRegion("./MainImages/EnemyMarker1.png", .95, windowLeft, windowTop):
             print("Test failed, scan function confidence should be higher if possible")
-        elif checkFoundInRegion("./MainImages/Test2.png", .95, windowLeft, windowTop):
+        elif checkFoundInRegion("./MainImages/EnemyMarker2.png", .95, windowLeft, windowTop):
             print("Test failed, scan function confidence should be higher if possible")
         elif checkFoundInRegion("./MainImages/Ambushed.png", .95, windowLeft, windowTop):
             print("Test failed, scan function confidence should be higher if possible")
         framesCaptured += 1
     calcedFPS = framesCaptured/3
+    print(calcedFPS)
 
     
 def turnLeft(degrees): #DO NOT turn more than 90 deg as cursor may go off screen
@@ -224,22 +228,22 @@ def turnRight(degrees):
 def scan(timer):
     #Get regions for scan and set up to hit enemy
     windowLeft = scanRegionX
-    windowTop = scanRegionY- 950
+    windowTop = scanRegionY - 950
     angleDown()
     altOn()
     #Using time * FPS instead of just seconds passed to reduce calculations done while scanning
-    for i in range(timer * calcedFPS):
-        if checkFoundInRegion("./MainImages/Test1.png", .95, windowLeft, windowTop):
-            print("Target Detected")
+    for i in range(int(timer * calcedFPS)):
+        if checkFoundInRegion("./MainImages/EnemyMarker1.png", .95, windowLeft, windowTop):
+            print("Target Detected (Light)")
             pya.click()
             altOff()
             return True
-        elif checkFoundInRegion("./MainImages/Test2.png", .95, windowLeft, windowTop):
-            print("Target Detected")
+        elif checkFoundInRegion("./MainImages/EnemyMarker2.png", .95, windowLeft, windowTop):
+            print("Target Detected (Mid)")
             pya.click()
             altOff()
             return True
-        elif checkFoundInRegion("./MainImages/Ambushed.png", .95, windowLeft, windowTop):
+        elif checkFoundInRegion("./MainImages/Ambushed.png", .97, windowLeft, windowTop):
             print("Ambushed!")
             altOff()
             return True

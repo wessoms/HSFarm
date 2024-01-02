@@ -18,12 +18,13 @@ def OSPFirstEnemy():
     adjustMenu('a', 3, 3)
 
     TPToWarp('./MainImages/JVI/OSP/FirstTP.png', .98)
+    calibrate()
 
     altOff()
     turnLeft(90)
     turnLeft(32)
     sprW(2.0)
-    scanFor(15,10)
+    scanFor(20,10)
 
 def OSPSecondEnemy():
     menu()
@@ -82,12 +83,13 @@ def BPFirstEnemy():
     time.sleep(.2)
 
     TPToWarp('./MainImages/JVI/BP/FirstTP2.png', .90)
+    calibrate()
 
     altOff()
     turnLeft(90)
     turnLeft(90)
     sprW(3)
-    scanFor(10,5)
+    scanFor(15,5)
 
 def BPSecondEnemy():
     menu()
@@ -147,7 +149,7 @@ def BPFifthEnemy():
     sprW(5.8)
     turnLeft(90)
     sprW(3.6)
-    scanFor(10,5)
+    scanFor(15,5)
 
 def BPSixthEnemy():
     menu()
@@ -180,10 +182,11 @@ def CFEFirstEnemy():
     adjustMenu('d', 2, 0)
 
     TPToWarp('./MainImages/JVI/CFE/FirstTP.png', .90)
+    calibrate()
     turnRight(90)
     turnRight(40)
     sprW(4.8)
-    scanFor(10, 5)
+    scanFor(15, 5)
 
 def CFESecondEnemy():
     menu()
@@ -201,7 +204,7 @@ def CFESecondEnemy():
     turnLeft(90)
     time.sleep(.2)
     sprW(7.5)
-    scanFor(20, 5)
+    scanFor(30, 5)
 
 def CFEThirdEnemy():
     menu()
@@ -215,7 +218,7 @@ def CFEThirdEnemy():
     sprW(2.7)
     turnRight(90)
     sprW(3.5)
-    scanFor(25, 5)
+    scanFor(35, 5)
 
 def CFEFourthEnemy():
     menu()
@@ -234,7 +237,7 @@ def CFEFourthEnemy():
     sprW(2)
     turnRight(60)
     sprW(1)
-    scanFor(20, 5)
+    scanFor(30, 5)
 
 def CFEFifthEnemy():
     menu()
@@ -255,7 +258,7 @@ def CFEFifthEnemy():
         TPToWarp('./MainImages/JVI/CFE/FourthTP.png', .90)
         turnRight(25)
         sprW(2.7)
-        scanFor(15, 5)
+        scanFor(25, 5)
 
 def CFESixthEnemy():
     menu()
@@ -267,7 +270,7 @@ def CFESixthEnemy():
     turnLeft(90)
     sprW(2.7)
     turnRight(60)
-    scanFor(10, 5)
+    scanFor(15, 5)
 
 def CFESeventhEnemy():
     menu()
@@ -295,7 +298,7 @@ def CFEEighthEnemy():
     sprW(4.2)
     turnRight(87)
     sprW(1.0)
-    scanFor(10, 5)
+    scanFor(15, 5)
 
 #----------------------------------------------------------------------
     
@@ -318,6 +321,7 @@ def EHFirstEnemy():
     adjustMenu('a', 1, 0)
 
     TPToWarp('./MainImages/JVI/EH/TP1.png', .90)
+    calibrate()
 
     turnLeft(90)
     turnLeft(45)
@@ -376,7 +380,7 @@ def EHFourthEnemy():
     sprW(1)
     turnRight(20)
     sprW(1)
-    scanFor(10, 5)
+    scanFor(15, 5)
 
 #----------------------------------------------------------------------
     
@@ -401,6 +405,7 @@ def GMFirstEnemy():
     adjustMenu('d', 3, 0)
     
     TPToWarp('./MainImages/JVI/GM/FirstTP.png', .90)
+    calibrate()
 
     turnLeft(90)
     turnLeft(18)
@@ -417,7 +422,7 @@ def GMSecondEnemy():
     turnRight(33)
     sprW(2.5)
     turnRight(25)
-    scanFor(10, 5)
+    scanFor(15, 5)
 
 def GMThirdEnemy():
     menu()
@@ -446,7 +451,7 @@ def GMFourthEnemy():
     sprW(1.6)
     turnRight(67)
     sprW(2.5)
-    scanFor(10, 5)
+    scanFor(15, 5)
 
 def GMFifthEnemy():
     menu()
@@ -494,7 +499,7 @@ def GMSeventhEnemy():
     turnLeft(55)
     sprW(1.8)
     turnRight(40)
-    scanFor(10, 5)
+    scanFor(15, 5)
 
 def GMEighthEnemy():
     menu()
@@ -519,7 +524,7 @@ def GMEighthEnemy():
         sprW(2.7)
         turnLeft(60)
         sprW(2)
-        scanFor(10, 5)
+        scanFor(15, 5)
 
 def GMNinthEnemy():
     menu()
@@ -561,6 +566,7 @@ def RTFirstEnemy():
     adjustMenu('d', 1, 0)
 
     TPToWarp('./MainImages/JVI/RT/FirstTP.png', .90)
+    calibrate()
 
     walk('d', 2.7)
     walk('w', .8)
@@ -583,7 +589,7 @@ def RTSecondEnemy():
     sprW(2)
     turnLeft(55)
     sprW(1.5)
-    scanFor(10, 5)
+    scanFor(15, 5)
 
 def RTThirdEnemy():
     menu()
@@ -614,7 +620,7 @@ def RTFourthEnemy():
     sprW(2.5)
     turnLeft(90)
     sprW(1)
-    if(scanFor(10, 5) == 1):
+    if(scanFor(15, 5) == 1):
         menu()
         TPToWarp('./MainImages/JVI/RT/Third.png', .90)
 
@@ -629,7 +635,7 @@ def RTFourthEnemy():
         sprW(2.5)
         turnLeft(90)
         sprW(1)
-        scanFor(10, 5)
+        scanFor(15, 5)
 
 #----------------------------------------------------------------------
         
@@ -657,6 +663,7 @@ def RSFirstEnemy():
     adjustMenu('s', 1, 0)
 
     TPToWarp('./MainImages/JVI/RS/FirstTP.png', .90)
+    calibrate()
 
     turnRight(90)
     turnRight(50)
@@ -672,7 +679,7 @@ def RSSecondEnemy():
     turnRight(20)
     sprW(3.8)
     turnRight(20)
-    scanFor(10, 5)
+    scanFor(15, 5)
 
 def RSThirdEnemy():
     menu()

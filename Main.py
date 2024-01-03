@@ -6,8 +6,9 @@ from Paths.JVISupport import *
 def main():
     Support.openGame()
 
-    HSS.fullClear()
-    JVI.fullClear()
+    #HSS.fullClear()
+    #JVI.fullClear()
+    XL.fullClear()
 
 
 if __name__ == '__main__':

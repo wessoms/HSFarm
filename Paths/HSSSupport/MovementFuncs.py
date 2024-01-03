@@ -247,4 +247,85 @@ def SUZFifthEnemy():
 
 #----------------------------------------------------------------------
     
-#Seclusion Zone Route TBD
+def SZStart():
+    menu()
+    selectPlanet()
+    selectParlor()
+    SZName = find('./MainImages/HSS/SZ/SeclusionZone.png', .85)
+
+    time.sleep(.2)
+    pya.moveTo(SZName)
+    time.sleep(.2)
+    pya.click()
+    time.sleep(.2)
+
+def SZFirstEnemy():
+    adjustMenu('s', 3, 3)
+    adjustMenu('d', 1, 0)
+
+    NormalizeFloor = find('./MainImages/HSS/SZ/NormalizeFloor.png', .90)
+    pya.moveTo(NormalizeFloor)
+    time.sleep(.2)
+    pya.click()
+    time.sleep(.2)
+
+    Floor2 = find('./MainImages/HSS/SZ/Floor2.png', .90)
+    pya.moveTo(Floor2)
+    time.sleep(.2)
+    pya.click()
+    time.sleep(.2)
+
+    TPToWarp('./MainImages/HSS/SZ/FirstTP.png', .90)
+    calibrate()
+
+    walk('w', 1)
+    turnRight(90)
+    sprW(5)
+    turnRight(27)
+    sprW(4)
+    turnRight(28)
+    sprW(2.4)
+    pya.press('alt')
+    pya.click()
+    pya.press('alt')
+    scanFor(10, 10)
+
+def SZSecondEnemy():
+    menu()
+    adjustMenu('s', 3, 3)
+    adjustMenu('d', 1, 0)
+
+    TPToWarp('./MainImages/HSS/SZ/FirstTP.png', .90)
+    walk('w', 1)
+    turnRight(90)
+    sprW(5)
+    turnRight(27)
+    sprW(4.1)
+    turnRight(24)
+    sprW(3)
+    turnRight(24)
+    sprW(2.6)
+    turnRight(18)
+    scanFor(30, 10)
+
+def SZThirdEnemy():
+    menu()
+    adjustMenu('w', 3, 3)
+    adjustMenu('d', 1, 0)
+    TPToWarp('./MainImages/HSS/SZ/SecondTP.png', .90)
+
+    turnRight(42)
+    sprW(1.4)
+    turnRight(45)
+    sprW(.8)
+    turnRight(49)
+    sprW(3.6)
+    turnRight(90)
+    sprW(1.85)
+    turnLeft(90)
+    sprW(2.7)
+    turnRight(35)
+    sprW(5.9)
+    turnRight(41)
+    sprW(1.4)
+    scanFor(20, 15)

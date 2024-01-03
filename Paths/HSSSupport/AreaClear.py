@@ -21,10 +21,19 @@ def clearSTZ():
     STZSeventhEnemy()
 
 def clearSUZ():
+    #testFunc()
 
-    STZStart()
-    STZFirstEnemy()
-    STZSecondEnemy()
-    STZThirdEnemy()
-    STZFourthEnemy()
-    STZFifthEnemy()
+    SUZStart()
+    SUZFirstEnemy()
+    SUZSecondEnemy()
+    SUZThirdEnemy()
+    SUZFourthEnemy()
+    SUZFifthEnemy()
+
+def clearSZ():
+    #testFunc()
+
+    SZStart()
+    SZFirstEnemy()
+    SZSecondEnemy()
+    SZThirdEnemy()

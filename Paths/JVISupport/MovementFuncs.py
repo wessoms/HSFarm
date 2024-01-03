@@ -409,8 +409,8 @@ def GMFirstEnemy():
     calibrate()
 
     turnLeft(90)
-    turnLeft(18)
-    sprW(3.5)
+    turnLeft(19)
+    sprW(4.3)
     scanFor(10, 10)
 
 def GMSecondEnemy():

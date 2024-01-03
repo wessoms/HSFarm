@@ -19,3 +19,12 @@ def clearSTZ():
     STZFifthEnemy()
     STZSixthEnemy()
     STZSeventhEnemy()
+
+def clearSUZ():
+
+    STZStart()
+    STZFirstEnemy()
+    STZSecondEnemy()
+    STZThirdEnemy()
+    STZFourthEnemy()
+    STZFifthEnemy()

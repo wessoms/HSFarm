@@ -12,18 +12,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-'''
-Structure of main:
-cmd parse??
-
-OpenGame
-call func to do each planet
-
-
-
-
-
-'''

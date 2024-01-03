@@ -1,5 +1,6 @@
 from .HSSSupport import *
 
 def fullClear():
-    #AreaClear.clearBZ()
+    AreaClear.clearBZ()
     AreaClear.clearSTZ()
+    AreaClear.clearSUZ()

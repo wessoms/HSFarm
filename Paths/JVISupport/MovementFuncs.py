@@ -24,7 +24,7 @@ def OSPFirstEnemy():
     turnLeft(90)
     turnLeft(32)
     sprW(2.0)
-    scanFor(20,10)
+    scanFor(40,10)
 
 def OSPSecondEnemy():
     menu()
@@ -34,7 +34,7 @@ def OSPSecondEnemy():
     turnLeft(90)
     turnLeft(13)
     sprW(5.3)
-    scanFor(5, 5)
+    scanFor(10, 5)
 
 def OSPThirdEnemy():
     menu()
@@ -44,7 +44,7 @@ def OSPThirdEnemy():
     turnLeft(90)
     turnLeft(21)
     sprW(9)
-    scanFor(5, 15)
+    scanFor(10, 15)
 
 def OSPFourthEnemy():
     menu()
@@ -56,7 +56,7 @@ def OSPFourthEnemy():
     sprW(7)
     turnRight(50)
     sprW(3.2)
-    scanFor(5, 10)
+    scanFor(10, 10)
 
 #----------------------------------------------------------------------
 
@@ -89,7 +89,7 @@ def BPFirstEnemy():
     turnLeft(90)
     turnLeft(90)
     sprW(3)
-    scanFor(15,5)
+    scanFor(25,5)
 
 def BPSecondEnemy():
     menu()
@@ -107,7 +107,7 @@ def BPSecondEnemy():
     sprW(5.5)
     turnLeft(53)
     sprW(0.9)
-    scanFor(5, 10)
+    scanFor(10, 10)
 
 def BPThirdEnemy():
     menu()
@@ -126,7 +126,7 @@ def BPThirdEnemy():
     time.sleep(2)
     pya.keyUp('d')
     sprW(3.5)
-    scanFor(5, 5)
+    scanFor(10, 5)
 
 def BPFourthEnemy():
     menu()
@@ -138,7 +138,7 @@ def BPFourthEnemy():
     sprW(5.4)
     turnLeft(90)
     sprW(1.5)
-    scanFor(5, 10)
+    scanFor(10, 10)
 
 def BPFifthEnemy():
     menu()
@@ -149,7 +149,7 @@ def BPFifthEnemy():
     sprW(5.8)
     turnLeft(90)
     sprW(3.6)
-    scanFor(15,5)
+    scanFor(25,5)
 
 def BPSixthEnemy():
     menu()
@@ -161,7 +161,7 @@ def BPSixthEnemy():
     sprW(3.7)
     turnRight(90)
     sprW(4)
-    scanFor(5, 5)
+    scanFor(10, 5)
 
 #----------------------------------------------------------------------
     
@@ -186,7 +186,7 @@ def CFEFirstEnemy():
     turnRight(90)
     turnRight(40)
     sprW(4.8)
-    scanFor(15, 5)
+    scanFor(25, 5)
 
 def CFESecondEnemy():
     menu()
@@ -204,7 +204,7 @@ def CFESecondEnemy():
     turnLeft(90)
     time.sleep(.2)
     sprW(7.5)
-    scanFor(30, 5)
+    scanFor(35, 5)
 
 def CFEThirdEnemy():
     menu()
@@ -259,6 +259,7 @@ def CFEFifthEnemy():
         turnRight(25)
         sprW(2.7)
         scanFor(25, 5)
+    altOff()
 
 def CFESixthEnemy():
     menu()
@@ -270,7 +271,7 @@ def CFESixthEnemy():
     turnLeft(90)
     sprW(2.7)
     turnRight(60)
-    scanFor(15, 5)
+    scanFor(20, 5)
 
 def CFESeventhEnemy():
     menu()
@@ -283,7 +284,7 @@ def CFESeventhEnemy():
     sprW(2)
     turnLeft(90)
     sprW(4)
-    scanFor(5, 10)
+    scanFor(10, 10)
 
 def CFEEighthEnemy():
     menu()
@@ -298,7 +299,7 @@ def CFEEighthEnemy():
     sprW(4.2)
     turnRight(87)
     sprW(1.0)
-    scanFor(15, 5)
+    scanFor(20, 5)
 
 #----------------------------------------------------------------------
     
@@ -328,7 +329,7 @@ def EHFirstEnemy():
     sprW(1.7)
     turnRight(57)
     sprW(2.4)
-    scanFor(5, 10)
+    scanFor(10, 10)
 
 def EHSecondEnemy():
     menu()
@@ -341,7 +342,7 @@ def EHSecondEnemy():
     sprW(3.8)
     turnRight(90)
     sprW(2)
-    scanFor(5, 5)
+    scanFor(10, 5)
 
 def EHThirdEnemy():
     menu()
@@ -359,7 +360,7 @@ def EHThirdEnemy():
     sprW(3.2)
     turnLeft(35)
     sprW(1.6)
-    scanFor(3, 10)
+    scanFor(6, 10)
 
 def EHFourthEnemy():
     menu()
@@ -380,7 +381,7 @@ def EHFourthEnemy():
     sprW(1)
     turnRight(20)
     sprW(1)
-    scanFor(15, 5)
+    scanFor(25, 5)
 
 #----------------------------------------------------------------------
     
@@ -410,7 +411,7 @@ def GMFirstEnemy():
     turnLeft(90)
     turnLeft(18)
     sprW(3.5)
-    scanFor(5, 10)
+    scanFor(10, 10)
 
 def GMSecondEnemy():
     menu()
@@ -422,7 +423,7 @@ def GMSecondEnemy():
     turnRight(33)
     sprW(2.5)
     turnRight(25)
-    scanFor(15, 5)
+    scanFor(25, 5)
 
 def GMThirdEnemy():
     menu()
@@ -442,7 +443,7 @@ def GMThirdEnemy():
     sprW(1)
     turnLeft(60)
     sprW(1.5)
-    scanFor(5, 5)
+    scanFor(10, 5)
 
 def GMFourthEnemy():
     menu()
@@ -451,7 +452,7 @@ def GMFourthEnemy():
     sprW(1.6)
     turnRight(67)
     sprW(2.5)
-    scanFor(15, 5)
+    scanFor(25, 5)
 
 def GMFifthEnemy():
     menu()
@@ -464,7 +465,7 @@ def GMFifthEnemy():
     sprW(1.0)
     turnLeft(63)
     sprW(1.6)
-    scanFor(5, 5)
+    scanFor(10, 5)
 
 def GMSixthEnemy():
     menu()
@@ -480,7 +481,7 @@ def GMSixthEnemy():
     sprW(2.5)
     turnLeft(45)
     sprW(2)
-    scanFor(5, 5)
+    scanFor(10, 5)
 
 def GMSeventhEnemy():
     menu()
@@ -499,7 +500,7 @@ def GMSeventhEnemy():
     turnLeft(55)
     sprW(1.8)
     turnRight(40)
-    scanFor(15, 5)
+    scanFor(25, 5)
 
 def GMEighthEnemy():
     menu()
@@ -524,7 +525,8 @@ def GMEighthEnemy():
         sprW(2.7)
         turnLeft(60)
         sprW(2)
-        scanFor(15, 5)
+        scanFor(25, 5)
+    altOff()
 
 def GMNinthEnemy():
     menu()
@@ -539,7 +541,7 @@ def GMNinthEnemy():
     sprW(3)
     turnRight(75)
     sprW(1)
-    scanFor(5, 10)
+    scanFor(10, 10)
 
 #----------------------------------------------------------------------
     
@@ -575,7 +577,7 @@ def RTFirstEnemy():
     walk('a', 5.5)
     turnLeft(15)
     sprW(1)
-    scanFor(5, 5)
+    scanFor(10, 5)
 
 def RTSecondEnemy():
     menu()
@@ -589,7 +591,7 @@ def RTSecondEnemy():
     sprW(2)
     turnLeft(55)
     sprW(1.5)
-    scanFor(15, 5)
+    scanFor(25, 5)
 
 def RTThirdEnemy():
     menu()
@@ -603,7 +605,7 @@ def RTThirdEnemy():
     sprW(1.5)
     turnRight(26)
     sprW(2.1)
-    scanFor(5, 5)
+    scanFor(10, 5)
 
 def RTFourthEnemy():
     menu()
@@ -620,7 +622,7 @@ def RTFourthEnemy():
     sprW(2.5)
     turnLeft(90)
     sprW(1)
-    if(scanFor(15, 5) == 1):
+    if(scanFor(25, 5) == 1):
         menu()
         TPToWarp('./MainImages/JVI/RT/Third.png', .90)
 
@@ -635,7 +637,8 @@ def RTFourthEnemy():
         sprW(2.5)
         turnLeft(90)
         sprW(1)
-        scanFor(15, 5)
+        scanFor(25, 5)
+    altOff()
 
 #----------------------------------------------------------------------
         
@@ -668,7 +671,7 @@ def RSFirstEnemy():
     turnRight(90)
     turnRight(50)
     sprW(.8)
-    scanFor(5, 5)
+    scanFor(10, 5)
 
 def RSSecondEnemy():
     menu()
@@ -679,7 +682,7 @@ def RSSecondEnemy():
     turnRight(20)
     sprW(3.8)
     turnRight(20)
-    scanFor(15, 5)
+    scanFor(25, 5)
 
 def RSThirdEnemy():
     menu()
@@ -699,7 +702,7 @@ def RSThirdEnemy():
     sprW(2)
     turnLeft(80)
     sprW(.6)
-    scanFor(5, 5)
+    scanFor(10, 5)
 
 def RSFourthEnemy():
     menu()
@@ -721,7 +724,7 @@ def RSFourthEnemy():
     sprW(1.5)
     turnLeft(85)
     sprW(.7)
-    scanFor(5, 5)
+    scanFor(10, 5)
 
 def RSFifthEnemy():
     menu()
@@ -742,5 +745,5 @@ def RSFifthEnemy():
     turnRight(78)
     sprW(2.5)
     turnLeft(85)
-    scanFor(5, 5)
+    scanFor(10, 5)
 

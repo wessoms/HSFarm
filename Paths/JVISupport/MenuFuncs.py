@@ -141,7 +141,7 @@ def selectParlor():
     pya.click()
 
 def countEnemies():
-    for i in range(5 * calcedFPS):
+    for i in range(int(10 * calcedFPS)):
         if(checkFound('./MainImages/3Enemies.png', .98)):
             return 3
         if(checkFound('./MainImages/2Enemies.png', .98)):

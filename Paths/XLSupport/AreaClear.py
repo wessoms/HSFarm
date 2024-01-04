@@ -6,3 +6,10 @@ def clearCF():
     testFunc()
 
     #CFStart()
+    #CFFirstEnemy()
+    #CFSecondEnemy()
+    #CFThirdEnemy()
+    #CFFourthEnemy()
+    #CFFifthEnemy()
+    #CFSixthEnemy()
+    #CFSeventhEnemy()

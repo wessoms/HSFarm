@@ -2,6 +2,7 @@ import time
 import pyautogui as pya
 
 def menu():
+    waitForLoadIn()
     time.sleep(.5)
     pya.press('m')
     altOff()

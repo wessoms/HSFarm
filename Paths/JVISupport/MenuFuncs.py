@@ -5,6 +5,7 @@ import pyautogui as pya
 #Declares variables used across multiple functions
 
 def menu():
+    waitForLoadIn()
     time.sleep(.5)
     pya.press('m')
     altOff()

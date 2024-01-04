@@ -13,3 +13,5 @@ def clearCF():
     #CFFifthEnemy()
     #CFSixthEnemy()
     #CFSeventhEnemy()
+    #CFEighthEnemy()
+    #CFNinthEnemy()

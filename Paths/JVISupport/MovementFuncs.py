@@ -410,7 +410,7 @@ def GMFirstEnemy():
 
     turnLeft(90)
     turnLeft(19)
-    sprW(4.3)
+    sprW(4.5)
     scanFor(10, 10)
 
 def GMSecondEnemy():
@@ -675,7 +675,7 @@ def RSFirstEnemy():
 
 def RSSecondEnemy():
     menu()
-    TPToWarp('./MainImages/JVI/RS/SecondTP.png', .90)
+    TPToWarp('./MainImages/JVI/RS/SecondTP.png', .80)
 
     walk('s', .7)
     turnRight(90)
@@ -686,7 +686,7 @@ def RSSecondEnemy():
 
 def RSThirdEnemy():
     menu()
-    TPToWarp('./MainImages/JVI/RS/SecondTP.png', .90)
+    TPToWarp('./MainImages/JVI/RS/SecondTP.png', .80)
 
     walk('s', .7)
     turnRight(90)
@@ -706,7 +706,7 @@ def RSThirdEnemy():
 
 def RSFourthEnemy():
     menu()
-    TPToWarp('./MainImages/JVI/RS/SecondTP.png', .90)
+    TPToWarp('./MainImages/JVI/RS/SecondTP.png', .80)
 
     walk('s', .7)
     turnRight(90)
@@ -728,7 +728,7 @@ def RSFourthEnemy():
 
 def RSFifthEnemy():
     menu()
-    TPToWarp('./MainImages/JVI/RS/SecondTP.png', .90)
+    TPToWarp('./MainImages/JVI/RS/SecondTP.png', .80)
 
     walk('s', .7)
     turnRight(90)

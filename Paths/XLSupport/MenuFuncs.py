@@ -33,7 +33,9 @@ def find(imageFile, conf):
             return location
         except pya.ImageNotFoundException:
             print(f"'{imageFile}' not found, trying again...")
-    print("Could not find the image after 10 tries... Exiting.")
+    print("Could not find the image after 10 tries... Trying again.")
+    waitForLoadIn()
+    find(imageFile, conf)
     exit()
 
 def checkFound(imageFile, conf):

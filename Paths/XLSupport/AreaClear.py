@@ -3,15 +3,15 @@ from .MovementFuncs import *
 from .testing import *
 
 def clearCF():
-    testFunc()
+    #testFunc()
 
-    #CFStart()
-    #CFFirstEnemy()
-    #CFSecondEnemy()
-    #CFThirdEnemy()
-    #CFFourthEnemy()
-    #CFFifthEnemy()
-    #CFSixthEnemy()
-    #CFSeventhEnemy()
-    #CFEighthEnemy()
-    #CFNinthEnemy()
+    CFStart()
+    CFFirstEnemy()
+    CFSecondEnemy()
+    CFThirdEnemy()
+    CFFourthEnemy()
+    CFFifthEnemy()
+    CFSixthEnemy()
+    CFSeventhEnemy()
+    CFEighthEnemy()
+    CFNinthEnemy()

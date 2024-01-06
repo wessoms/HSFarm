@@ -83,29 +83,29 @@ def STZFourthEnemy():
     menu()
     TPToWarp('./MainImages/HSS/STZ/SecondTP2.png', .80)
 
-    sprW(1.4)
+    sprW(1.6)
     turnLeft(35)
-    sprW(1.4)
+    sprW(1.6)
     turnLeft(60)
-    sprW(.9)
+    sprW(1.1)
     scanFor(10, 5)
 
 def STZFifthEnemy():
     menu()
     TPToWarp('./MainImages/HSS/STZ/SecondTP2.png', .80)
 
-    sprW(1.4)
+    sprW(1.6)
     turnLeft(35)
-    sprW(1.4)
+    sprW(1.6)
     turnLeft(60)
-    sprW(.9)
+    sprW(1.1)
     turnRight(90)
     turnRight(25)
-    sprW(1.3)
+    sprW(1.4)
     turnLeft(50)
-    sprW(1)
+    sprW(1.2)
     turnLeft(40)
-    sprW(2.4)
+    sprW(2.5)
     turnLeft(32)
     sprW(2.8)
     turnLeft(90)
@@ -149,7 +149,7 @@ def STZSeventhEnemy():
     turnRight(60)
     sprW(1.2)
     turnLeft(60)
-    sprW(1.0)
+    sprW(1.2)
     scanFor(10, 10)
 
 #----------------------------------------------------------------------
@@ -196,7 +196,7 @@ def SUZSecondEnemy():
     sprW(5.3)
     time.sleep(.2)
     walk('a', 3.8)
-    sprW(1.6)
+    sprW(1.8)
     scanFor(15, 5)
 
 def SUZThirdEnemy():
@@ -204,7 +204,7 @@ def SUZThirdEnemy():
 
     TPToWarp('./MainImages/HSS/SUZ/SecondTP.png', .90)
 
-    sprW(4)
+    sprW(4.2)
     scanFor(15, 5)
 
 def SUZFourthEnemy():
@@ -213,7 +213,7 @@ def SUZFourthEnemy():
 
     turnLeft(90)
     turnLeft(70)
-    sprW(2.1)
+    sprW(2.2)
     turnLeft(75)
     pya.press('f')
 
@@ -231,7 +231,7 @@ def SUZFifthEnemy():
 
     turnLeft(90)
     turnLeft(70)
-    sprW(2.1)
+    sprW(2.2)
     turnLeft(75)
     pya.press('f')
 
@@ -282,9 +282,9 @@ def SZFirstEnemy():
     turnRight(90)
     sprW(5)
     turnRight(27)
-    sprW(4)
+    sprW(4.2)
     turnRight(28)
-    sprW(2.4)
+    sprW(2.5)
     pya.press('alt')
     pya.click()
     pya.press('alt')
@@ -300,9 +300,9 @@ def SZSecondEnemy():
     turnRight(90)
     sprW(5)
     turnRight(27)
-    sprW(4.1)
+    sprW(4.2)
     turnRight(24)
-    sprW(3)
+    sprW(3.2)
     turnRight(24)
     sprW(2.6)
     turnRight(18)
